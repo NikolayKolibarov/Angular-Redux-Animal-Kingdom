@@ -1,0 +1,11 @@
+<div *ngFor="let comment of comments">
+  <md-card>
+    <md-card-header>
+      <md-card-title>{{ comment.user }} </md-card-title>
+      <md-card-subtitle>{{ comment.createdOn | date }}</md-card-subtitle>
+    </md-card-header>
+    <md-card-content>
+      <p>Comment: <strong>{{ comment.message.message }}</strong></p>
+    </md-card-content>
+  </md-card>
+</div>

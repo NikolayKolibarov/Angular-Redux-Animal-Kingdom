@@ -1,0 +1,14 @@
+<h1>Animal</h1>
+<ak-animal-search [page]='page' (onSearch)='onSearchInputChange($event)'></ak-animal-search>
+
+<h3 *ngIf="searchResults.length == 0 && search.length || animals.length == 0">No animals found.</h3>
+<ak-animal-list [animals]='animals' *ngIf='search.length < 1'></ak-animal-list>
+<ak-animal-list [animals]='searchResults' *ngIf='searchResults.length != 0 && search.length > 0'></ak-animal-list>
+
+<ak-paginator [page]='page' 
+              [items]="search === '' ? animals : searchResults" 
+              (onPreviousPage)='previousPage($event)' 
+              (onNextPage)='nextPage($event)'>
+</ak-paginator>
+
+<div class="ak-space"></div>

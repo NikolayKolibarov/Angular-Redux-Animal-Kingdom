@@ -1,0 +1,15 @@
+<md-card>
+  <md-card-header>
+    <md-card-title><h1>{{ animal.name }}</h1></md-card-title>
+    <md-card-subtitle>{{ animal.type }}</md-card-subtitle>
+  </md-card-header>
+  <img md-card-image src="{{ animal.image }}">
+  <md-card-content>
+    <h2>${{ animal.price }}</h2>
+    <p>
+    </p>
+  </md-card-content>
+  <md-card-actions>
+    <button md-button (click)="viewAnimalDetails(animal.id)">{{"Details" | uppercase }}</button>
+  </md-card-actions>
+</md-card>

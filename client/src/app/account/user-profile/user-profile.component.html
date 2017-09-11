@@ -1,0 +1,24 @@
+<h1>User Profile</h1>
+<h2>Animals</h2>
+<h3 *ngIf="animals.length < 1">No animals to be shown.</h3>
+<div *ngFor="let animal of animals">
+
+    <md-card>
+        <md-card-header>
+            <md-card-title>{{ animal.name }}</md-card-title>
+            <md-card-subtitle>{{ animal.type }}</md-card-subtitle>
+        </md-card-header>
+        <img md-card-image src="{{ animal.image }}">
+        <md-card-content>
+            <h4>${{ animal.price }}</h4>
+            <p>
+            </p>
+        </md-card-content>
+        <md-card-actions>
+            <a routerLink="/animals/details/{{animal.id}}" md-button>{{"Details" | uppercase }}</a>
+            <button md-button (click)="remove(animal.id)">{{"Remove" | uppercase}}</button>
+        </md-card-actions>
+    </md-card>
+    <br>
+</div>
+<div class="ak-space"></div>

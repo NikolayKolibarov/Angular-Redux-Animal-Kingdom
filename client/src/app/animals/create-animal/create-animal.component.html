@@ -1,0 +1,29 @@
+<h1>Create Animal</h1>
+<div>
+    <md-card>
+        <form>
+            <md-input-container>
+                <input type="text" [(ngModel)]="name" mdInput name="name" placeholder="Name" />
+            </md-input-container>
+            <md-input-container>
+                <input type="text" [(ngModel)]="age" mdInput name="age" placeholder="Age" />
+            </md-input-container>
+            <md-input-container>
+                <input type="text" [(ngModel)]="color" mdInput name="color" placeholder="Color" />
+            </md-input-container>
+            <md-input-container>
+                <input type="text" [(ngModel)]="type" mdInput name="type" placeholder="Type" />
+            </md-input-container>
+            <md-input-container>
+                <input type="text" [(ngModel)]="price" mdInput name="price" placeholder="Price" />
+            </md-input-container>
+            <md-input-container>
+                <input type="text" [(ngModel)]="image" mdInput name="image" placeholder="Image URL" />
+            </md-input-container>
+             <md-input-container>
+                <input type="text" [(ngModel)]="breed" mdInput name="breed" placeholder="Breed" />
+            </md-input-container>
+        </form>
+    </md-card>
+    <button md-raised-button (click)="create(name, age, color, type, price, image, breed)">Create Animal</button>
+</div>

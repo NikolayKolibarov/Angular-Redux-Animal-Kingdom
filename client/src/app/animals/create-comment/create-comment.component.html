@@ -1,0 +1,13 @@
+<md-card>
+        <form>
+
+            <div class="ak-space"></div>
+            <md-input-container>
+
+                <textarea [(ngModel)]="comment" mdInput name="comment" placeholder="Comment"></textarea>
+
+            </md-input-container>
+        </form>
+        <button md-raised-button (click)="addComment(comment)">Add Comment</button>
+
+    </md-card>

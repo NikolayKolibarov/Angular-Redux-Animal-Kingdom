@@ -1,0 +1,5 @@
+<div class="paginator">
+  <p>{{ page }}</p>
+  <button md-raised-button (click)="previousPage()" [disabled]="!hasPreviousPage()">{{"<" | uppercase }}</button>
+  <button md-raised-button (click)="nextPage()" [disabled]="!hasNextPage()">{{">" | uppercase }}</button>
+</div>

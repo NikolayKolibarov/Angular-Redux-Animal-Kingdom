@@ -1,0 +1,47 @@
+<div *ngIf="animal">
+    <h1>{{animal.make}} {{ animal.model }} {{ animal.engine }}</h1>
+    <md-card>
+        <md-card-header>
+            <md-card-title>{{ animal.make }} {{ animal.model }}</md-card-title>
+            <md-card-subtitle>{{ animal.engine }}</md-card-subtitle>
+        </md-card-header>
+        <img md-card-image src="{{ animal.image }}">
+        <md-card-content>
+            <h3>${{ animal.price }}</h3>
+            <md-list>
+                <md-list-item> Name - {{ animal.name }} </md-list-item>
+                <md-list-item> Type - {{ animal.type }} </md-list-item>
+                <md-list-item *ngIf='animal.breed'> Breed - {{ animal.breed }} </md-list-item>
+                <md-list-item> Color - {{ animal.color }} </md-list-item>
+                <md-list-item> Age: {{ animal.age }} </md-list-item>
+            </md-list>
+        </md-card-content>
+        <md-card-actions>
+            <p>Reaction</p>
+            <button md-raised-button (click)="addReaction(animal.id, 'like')" [value]="like" selected>Like</button>{{animal.reactions.like}}
+            <button md-raised-button (click)="addReaction(animal.id, 'love')">Love</button>{{animal.reactions.love}}
+            <button md-raised-button (click)="addReaction(animal.id, 'haha')">Haha</button>{{animal.reactions.haha}}
+            <button md-raised-button (click)="addReaction(animal.id, 'wow')">Wow</button>{{animal.reactions.wow}}
+            <button md-raised-button (click)="addReaction(animal.id, 'sad')">Sad</button>{{animal.reactions.sad}}
+            <button md-raised-button (click)="addReaction(animal.id, 'angry')">Angry</button>{{animal.reactions.angry}}
+        </md-card-actions>
+        <md-card-footer>
+            <p>{{ animal.createdOn | date }}</p>
+        </md-card-footer>
+    </md-card>
+
+    <div class="ak-space"></div>
+
+    <h2>Add Comment</h2>
+    <ak-create-comment [animalId]="animal.id"></ak-create-comment>
+
+    <div class="ak-space"></div>
+    
+    <h2>Comments</h2>
+    <ak-comment-list [comments]="animalComments" *ngIf="animalComments.length > 0"></ak-comment-list>
+    <p *ngIf="animalComments.length === 0">There are no comments for this animal yet.</p>
+
+    <button md-raised-button (click)="back()">Back</button>
+
+    <div class="ak-space"></div>
+</div>
